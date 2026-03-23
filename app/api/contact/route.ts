@@ -58,9 +58,13 @@ export async function POST(request: Request) {
   });
 
   if (error) {
-    console.error("Resend error:", error);
+    console.error("Resend error:", JSON.stringify(error, null, 2));
+    const detail =
+      process.env.NODE_ENV === "development"
+        ? ` (${error.message})`
+        : "";
     return Response.json(
-      { error: "Failed to send message. Please try again later." },
+      { error: `Failed to send message. Please try again later.${detail}` },
       { status: 500 },
     );
   }
