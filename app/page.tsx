@@ -2,6 +2,7 @@ import Image from "next/image";
 import { profile, socialLinks, projects } from "@/lib/site";
 import ContactForm from "@/components/ContactForm";
 import GradientBackground from "@/components/GradientBackground";
+import CursorAura from "@/components/CursorAura";
 
 function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   return (
@@ -22,7 +23,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
             </span>
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a1020] via-[#0a1020]/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#111a2e] via-[#111a2e]/40 to-transparent" />
       </div>
 
       <div className="flex flex-1 flex-col p-6">
@@ -119,9 +120,10 @@ export default function Home() {
   return (
     <main className="relative min-h-screen text-white">
       <GradientBackground />
+      <CursorAura />
 
       {/* ─── Navigation ─── */}
-      <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/[0.04] bg-[#0a1020]/80 backdrop-blur-md">
+      <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/[0.04] bg-[#111a2e]/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <span className="text-lg font-bold tracking-tight text-white">
             {profile.name.split(" ")[0]}
@@ -187,7 +189,7 @@ export default function Home() {
         </div>
 
         <div className="relative shrink-0">
-          <div className="relative h-48 w-48 overflow-hidden rounded-full ring-2 ring-indigo-500/20 ring-offset-4 ring-offset-[#0a1020] md:h-60 md:w-60">
+          <div className="relative h-48 w-48 overflow-hidden rounded-full ring-2 ring-indigo-500/20 ring-offset-4 ring-offset-[#111a2e] md:h-60 md:w-60">
             <Image
               src={profile.avatar}
               alt={profile.name}

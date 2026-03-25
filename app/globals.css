@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a1020;
+  --background: #111a2e;
   --foreground: #e2e8f0;
 }
 
@@ -60,6 +60,16 @@ html {
   animation: drift-3 20s ease-in-out infinite;
 }
 
+.orb-4 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #f59e0b, #d97706);
+  top: 15%;
+  right: 20%;
+  opacity: 0.10;
+  animation: drift-4 24s ease-in-out infinite;
+}
+
 @keyframes drift-1 {
   0%, 100% { transform: translate(0, 0) scale(1); }
   33% { transform: translate(80px, 60px) scale(1.1); }
@@ -76,4 +86,10 @@ html {
   0%, 100% { transform: translate(0, 0) scale(1); }
   33% { transform: translate(50px, -30px) scale(1.08); }
   66% { transform: translate(-70px, -20px) scale(0.92); }
+}
+
+@keyframes drift-4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-50px, 40px) scale(1.12); }
+  66% { transform: translate(60px, -30px) scale(0.88); }
 }
