@@ -22,7 +22,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
             </span>
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060b18] via-[#060b18]/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a1020] via-[#0a1020]/40 to-transparent" />
       </div>
 
       <div className="flex flex-1 flex-col p-6">
@@ -121,7 +121,7 @@ export default function Home() {
       <GradientBackground />
 
       {/* ─── Navigation ─── */}
-      <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/[0.04] bg-[#060b18]/80 backdrop-blur-md">
+      <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/[0.04] bg-[#0a1020]/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <span className="text-lg font-bold tracking-tight text-white">
             {profile.name.split(" ")[0]}
@@ -163,8 +163,8 @@ export default function Home() {
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
-              href={`mailto:${profile.email}`}
-              className="rounded-lg bg-gradient-to-r from-indigo-500 to-violet-500 px-6 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
+              href="#contact"
+              className="cursor-pointer rounded-lg bg-gradient-to-r from-indigo-500 to-violet-500 px-6 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:brightness-110"
             >
               Get in Touch
             </a>
@@ -187,14 +187,14 @@ export default function Home() {
         </div>
 
         <div className="relative shrink-0">
-          <div className="relative h-40 w-40 overflow-hidden rounded-full ring-2 ring-indigo-500/20 ring-offset-4 ring-offset-[#060b18] md:h-52 md:w-52">
+          <div className="relative h-48 w-48 overflow-hidden rounded-full ring-2 ring-indigo-500/20 ring-offset-4 ring-offset-[#0a1020] md:h-60 md:w-60">
             <Image
               src={profile.avatar}
               alt={profile.name}
               fill
               priority
-              className="object-cover"
-              sizes="(max-width: 768px) 160px, 208px"
+              className="object-cover object-[center_15%]"
+              sizes="(max-width: 768px) 192px, 240px"
             />
           </div>
         </div>
