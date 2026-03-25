@@ -5,28 +5,28 @@ import GradientBackground from "@/components/GradientBackground";
 
 function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   return (
-    <div className="group flex flex-col overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-sm transition hover:-translate-y-1 hover:border-indigo-500/30 hover:bg-white/[0.06]">
-      <div className="relative h-44 overflow-hidden bg-slate-800/50">
+    <div className="group flex flex-col overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-500/20 hover:shadow-[0_8px_40px_-12px_rgba(99,102,241,0.15)]">
+      <div className="relative h-48 overflow-hidden">
         {project.image ? (
           <Image
             src={project.image}
             alt={project.title}
             fill
-            className="object-cover transition duration-300 group-hover:scale-105"
+            className="object-cover transition duration-500 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         ) : (
-          <div className="flex h-full items-center justify-center bg-gradient-to-br from-indigo-900/40 to-violet-900/40">
-            <span className="select-none text-3xl font-bold tracking-wide text-indigo-400/50">
+          <div className="flex h-full items-center justify-center bg-gradient-to-br from-indigo-900/30 to-violet-900/30">
+            <span className="select-none text-4xl font-bold tracking-wide text-indigo-400/40">
               {project.title.slice(0, 2)}
             </span>
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060b18]/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060b18] via-[#060b18]/40 to-transparent" />
       </div>
 
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+        <h3 className="text-lg font-semibold text-white">{project.title}</h3>
         <p className="mt-2 text-sm leading-relaxed text-slate-400">
           {project.description}
         </p>
@@ -37,7 +37,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
               key={h}
               className="flex items-start gap-2 text-sm text-slate-400"
             >
-              <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-indigo-400" />
+              <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-indigo-400/60" />
               {h}
             </li>
           ))}
@@ -47,7 +47,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
           {project.tech.map((t) => (
             <span
               key={t}
-              className="rounded-full border border-indigo-500/20 bg-indigo-500/[0.07] px-3 py-0.5 text-xs text-indigo-300"
+              className="rounded-full border border-indigo-500/15 bg-indigo-500/[0.06] px-3 py-0.5 text-xs text-indigo-300/80"
             >
               {t}
             </span>
@@ -91,52 +91,127 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   );
 }
 
+function SectionHeading({
+  eyebrow,
+  title,
+  description,
+}: {
+  eyebrow: string;
+  title: string;
+  description?: string;
+}) {
+  return (
+    <div className="mb-12">
+      <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-indigo-400/70">
+        {eyebrow}
+      </p>
+      <h2 className="text-3xl font-bold text-white md:text-4xl">{title}</h2>
+      {description && (
+        <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-400">
+          {description}
+        </p>
+      )}
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <main className="relative min-h-screen text-white">
       <GradientBackground />
 
-      {/* ─── Hero ─── */}
-      <section className="mx-auto max-w-5xl px-6 pb-12 pt-24 md:pt-32">
-        <p className="mb-3 text-sm uppercase tracking-[0.2em] text-indigo-400/70">
-          Portfolio
-        </p>
-        <h1 className="bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-4xl font-bold leading-tight text-transparent md:text-5xl lg:text-6xl">
-          {profile.name}
-        </h1>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-300">
-          {profile.tagline}
-        </p>
+      {/* ─── Navigation ─── */}
+      <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/[0.04] bg-[#060b18]/80 backdrop-blur-md">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+          <span className="text-lg font-bold tracking-tight text-white">
+            {profile.name.split(" ")[0]}
+            <span className="text-indigo-400">.</span>
+          </span>
 
-        <div className="mt-8 flex flex-wrap items-center gap-4">
-          {socialLinks.map((link) => (
+          <div className="flex items-center gap-6">
+            <a href="#about" className="text-sm text-slate-400 transition hover:text-white">About</a>
+            <a href="#projects" className="text-sm text-slate-400 transition hover:text-white">Projects</a>
+            <a href="#contact" className="text-sm text-slate-400 transition hover:text-white">Contact</a>
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.url}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm text-slate-400 transition hover:text-white"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </nav>
+
+      {/* ─── Hero ─── */}
+      <section className="mx-auto flex max-w-6xl flex-col-reverse items-center gap-12 px-6 pb-16 pt-32 md:flex-row md:items-start md:gap-16 md:pt-40 lg:pt-44">
+        <div className="flex-1">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-indigo-400/70">
+            Portfolio
+          </p>
+          <h1 className="bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-4xl font-bold leading-tight text-transparent md:text-5xl lg:text-6xl">
+            {profile.name}
+          </h1>
+          <p className="mt-2 text-base text-slate-500">{profile.location}</p>
+          <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-300">
+            {profile.tagline}
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
-              key={link.label}
-              href={link.url}
+              href={`mailto:${profile.email}`}
+              className="rounded-lg bg-gradient-to-r from-indigo-500 to-violet-500 px-6 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
+            >
+              Get in Touch
+            </a>
+            <a
+              href={profile.resumeUrl}
               target="_blank"
               rel="noreferrer"
-              className="rounded-lg border border-white/10 bg-white/[0.04] px-5 py-2.5 text-sm font-semibold backdrop-blur-sm transition hover:border-indigo-500/40 hover:bg-white/[0.08] hover:text-white"
+              className="rounded-lg border border-white/10 bg-white/[0.04] px-6 py-2.5 text-sm font-semibold backdrop-blur-sm transition hover:border-indigo-500/40 hover:bg-white/[0.08]"
             >
-              {link.label}
+              View Resume
             </a>
-          ))}
-          <a
-            href={`mailto:${profile.email}`}
-            className="rounded-lg bg-gradient-to-r from-indigo-500 to-violet-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
-          >
-            Get in Touch
-          </a>
+            <a
+              href={profile.resumeUrl}
+              download
+              className="rounded-lg border border-white/10 bg-white/[0.04] px-6 py-2.5 text-sm font-semibold backdrop-blur-sm transition hover:border-indigo-500/40 hover:bg-white/[0.08]"
+            >
+              Download Resume
+            </a>
+          </div>
+        </div>
+
+        <div className="relative shrink-0">
+          <div className="relative h-40 w-40 overflow-hidden rounded-full ring-2 ring-indigo-500/20 ring-offset-4 ring-offset-[#060b18] md:h-52 md:w-52">
+            <Image
+              src={profile.avatar}
+              alt={profile.name}
+              fill
+              priority
+              className="object-cover"
+              sizes="(max-width: 768px) 160px, 208px"
+            />
+          </div>
         </div>
       </section>
 
       {/* ─── About ─── */}
-      <section className="mx-auto max-w-5xl px-6 py-16">
-        <h2 className="mb-6 text-2xl font-semibold text-white">About</h2>
-        <div className="max-w-2xl space-y-4">
+      <section id="about" className="mx-auto max-w-6xl px-6 py-20">
+        <SectionHeading
+          eyebrow="About"
+          title="A bit about me"
+          description="Get to know who I am and what drives me as a developer."
+        />
+        <div className="max-w-2xl space-y-5">
           {profile.about.map((paragraph) => (
             <p
               key={paragraph.slice(0, 32)}
-              className="text-sm leading-relaxed text-slate-400"
+              className="text-base leading-relaxed text-slate-400"
             >
               {paragraph}
             </p>
@@ -145,8 +220,12 @@ export default function Home() {
       </section>
 
       {/* ─── Projects ─── */}
-      <section className="mx-auto max-w-5xl px-6 py-16">
-        <h2 className="mb-8 text-2xl font-semibold text-white">Projects</h2>
+      <section id="projects" className="mx-auto max-w-6xl px-6 py-20">
+        <SectionHeading
+          eyebrow="Projects"
+          title="Things I've built"
+          description="A selection of projects I've worked on, from ML models to full-stack applications."
+        />
         <div className="grid gap-8 md:grid-cols-2">
           {projects.map((project) => (
             <ProjectCard key={project.title} project={project} />
@@ -155,23 +234,22 @@ export default function Home() {
       </section>
 
       {/* ─── Contact ─── */}
-      <section className="mx-auto max-w-5xl px-6 py-16">
-        <h2 className="mb-2 text-2xl font-semibold text-white">
-          Get in Touch
-        </h2>
-        <p className="mb-8 text-sm text-slate-400">
-          Have a role, project, or question? Drop me a message.
-        </p>
-        <div className="max-w-xl">
+      <section id="contact" className="mx-auto max-w-6xl px-6 py-20">
+        <SectionHeading
+          eyebrow="Contact"
+          title="Let's work together"
+          description="Have a role, project, or question? Drop me a message."
+        />
+        <div className="max-w-xl rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 backdrop-blur-sm">
           <ContactForm />
         </div>
       </section>
 
       {/* ─── Footer ─── */}
-      <footer className="mx-auto max-w-5xl border-t border-white/[0.06] px-6 py-8">
-        <div className="flex flex-col items-center justify-between gap-4 text-xs text-slate-500 sm:flex-row">
-          <span>&copy; {new Date().getFullYear()} {profile.name}</span>
-          <div className="flex gap-4">
+      <footer className="mx-auto max-w-6xl border-t border-white/[0.06] px-6 py-10">
+        <div className="flex flex-col items-center justify-between gap-4 text-sm text-slate-500 sm:flex-row">
+          <span>&copy; {new Date().getFullYear()} {profile.name}. All rights reserved.</span>
+          <div className="flex items-center gap-5">
             {socialLinks.map((link) => (
               <a
                 key={link.label}
@@ -183,6 +261,14 @@ export default function Home() {
                 {link.label}
               </a>
             ))}
+            <a
+              href={profile.resumeUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="transition hover:text-indigo-400"
+            >
+              Resume
+            </a>
           </div>
         </div>
       </footer>

@@ -43,8 +43,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
-      {/* honeypot */}
+    <form onSubmit={handleSubmit} className="space-y-6">
       <input
         type="text"
         name="honeypot"
@@ -54,40 +53,40 @@ export default function ContactForm() {
         aria-hidden="true"
       />
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-6 sm:grid-cols-2">
         <label className="block">
-          <span className="mb-1.5 block text-sm text-slate-400">Name</span>
+          <span className="mb-2 block text-sm font-medium text-slate-300">Name</span>
           <input
             name="name"
             type="text"
             required
             maxLength={100}
-            className="w-full rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-sm text-white placeholder-slate-600 outline-none backdrop-blur-sm transition focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50"
+            className="w-full rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/30"
             placeholder="Jane Doe"
           />
         </label>
 
         <label className="block">
-          <span className="mb-1.5 block text-sm text-slate-400">Email</span>
+          <span className="mb-2 block text-sm font-medium text-slate-300">Email</span>
           <input
             name="email"
             type="email"
             required
             maxLength={200}
-            className="w-full rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-sm text-white placeholder-slate-600 outline-none backdrop-blur-sm transition focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50"
+            className="w-full rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/30"
             placeholder="jane@example.com"
           />
         </label>
       </div>
 
       <label className="block">
-        <span className="mb-1.5 block text-sm text-slate-400">Message</span>
+        <span className="mb-2 block text-sm font-medium text-slate-300">Message</span>
         <textarea
           name="message"
           required
           maxLength={2000}
           rows={5}
-          className="w-full resize-none rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-sm text-white placeholder-slate-600 outline-none backdrop-blur-sm transition focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50"
+          className="w-full resize-none rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/30"
           placeholder="Tell me about the role or project..."
         />
       </label>
@@ -96,7 +95,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="rounded-lg bg-gradient-to-r from-indigo-500 to-violet-500 px-6 py-2.5 text-sm font-semibold text-white transition hover:brightness-110 disabled:opacity-50"
+          className="rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110 disabled:opacity-50"
         >
           {status === "sending" ? "Sending\u2026" : "Send Message"}
         </button>

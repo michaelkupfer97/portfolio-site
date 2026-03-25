@@ -25,6 +25,8 @@ export const profile = {
     "As a university tutor for Deep Learning, Data Structures, and Algorithms I sharpened both my technical depth and my ability to explain complex ideas clearly.",
     "I care about clean, maintainable code and building products that actually work well for the people who use them.",
   ],
+  avatar: "/profile.jpeg",
+  resumeUrl: "/resume.pdf",
 } as const;
 
 export const socialLinks: SocialLink[] = [

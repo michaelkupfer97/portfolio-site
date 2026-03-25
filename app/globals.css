@@ -18,13 +18,18 @@ body {
   font-family: var(--font-sans, var(--font-geist-sans)), system-ui, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
 /* ── animated background orbs ── */
 
 .orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.18;
+  filter: blur(120px);
+  opacity: 0.12;
   will-change: transform;
 }
 
