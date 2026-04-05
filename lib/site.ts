@@ -92,4 +92,18 @@ export const projects: Project[] = [
     image: "/work-scheduler.png",
     githubUrl: "https://github.com/michaelkupfer97/WorkScheduler",
   },
+  {
+    title: "Studio Time",
+    description:
+      "Multi-user session management app for an art studio \u2014 lets admins schedule classes, manage students, and track attendance with JWT-based authentication.",
+    highlights: [
+      "JWT authentication with role-based access control",
+      "User-scoped card management so each user only sees their own records",
+      "Full-stack app with Express REST API and Vite vanilla JS frontend",
+    ],
+    tech: ["Node.js", "Express", "MongoDB", "JWT", "Vite"],
+    image: "/Stutio-time.jpg",
+    githubUrl: "https://github.com/TheZohar11/miriyam-studio",
+    liveUrl: "https://miriyam-studio-front.onrender.com/",
+  },
 ];

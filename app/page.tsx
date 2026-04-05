@@ -130,17 +130,17 @@ export default function Home() {
             <span className="text-indigo-400">.</span>
           </span>
 
-          <div className="flex items-center gap-6">
-            <a href="#about" className="text-sm text-slate-400 transition hover:text-white">About</a>
-            <a href="#projects" className="text-sm text-slate-400 transition hover:text-white">Projects</a>
-            <a href="#contact" className="text-sm text-slate-400 transition hover:text-white">Contact</a>
+          <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide sm:gap-6">
+            <a href="#about" className="whitespace-nowrap text-xs text-slate-400 transition hover:text-white sm:text-sm">About</a>
+            <a href="#projects" className="whitespace-nowrap text-xs text-slate-400 transition hover:text-white sm:text-sm">Projects</a>
+            <a href="#contact" className="whitespace-nowrap text-xs text-slate-400 transition hover:text-white sm:text-sm">Contact</a>
             {socialLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.url}
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm text-slate-400 transition hover:text-white"
+                className="whitespace-nowrap text-xs text-slate-400 transition hover:text-white sm:text-sm"
               >
                 {link.label}
               </a>
