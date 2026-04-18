@@ -106,4 +106,18 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/TheZohar11/miriyam-studio",
     liveUrl: "https://miriyam-studio-front.onrender.com/",
   },
+  {
+    title: "My Blog",
+    description:
+      "A minimal full-stack blog built with Express and EJS: create and manage posts from the homepage with Bootstrap styling, no database required for lightweight deployment.",
+    highlights: [
+      "Server-rendered pages with EJS templates and Express routes",
+      "Post workflow (create, edit, delete) using in-memory storage",
+      "Bootstrap layout and Font Awesome icons, deployed on Render",
+    ],
+    tech: ["Node.js", "Express", "EJS", "Bootstrap"],
+    image: "/BLOG-SITE.jpg",
+    githubUrl: "https://github.com/michaelkupfer97/my-blog-express",
+    liveUrl: "https://my-blog-express.onrender.com/",
+  },
 ];
