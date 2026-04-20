@@ -80,17 +80,32 @@ export const projects: Project[] = [
     },
   },
   {
-    title: "Work Scheduler",
+    title: "WorkScheduler",
     description:
-      "MERN-based shift scheduling system with authentication, role-based access control, and a responsive management UI.",
+      "Shift scheduling web app for organizations with manager scheduling tools and employee availability, swaps, and time-off workflows.",
     highlights: [
-      "JWT authentication with role-based access (admin / employee)",
-      "Business logic and data models in Node.js + MongoDB",
-      "Responsive React UI for shift management and user allocation",
+      "Manager scheduling tools (weekly grid + constraint-aware generation)",
+      "Employee availability/preferences, shift swaps + approvals, time-off workflows",
+      "Full-stack TypeScript with shared Zod validation, JWT auth, MongoDB persistence",
     ],
-    tech: ["MongoDB", "Express", "React", "Node.js"],
+    tech: [
+      "React",
+      "Vite",
+      "TypeScript",
+      "Tailwind",
+      "TanStack Query",
+      "Express",
+      "MongoDB",
+      "Zod",
+      "JWT",
+    ],
     image: "/work-scheduler.png",
     githubUrl: "https://github.com/michaelkupfer97/WorkScheduler",
+    liveUrl: "https://work-scheduler-nine.vercel.app/",
+    secondaryLink: {
+      url: "https://workscheduler-michaelkupfer97.fly.dev/healthz",
+      label: "API Health",
+    },
   },
   {
     title: "Studio Time",
