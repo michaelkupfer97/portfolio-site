@@ -2,7 +2,7 @@
 
 Personal portfolio site showcasing end-to-end software projects spanning full-stack web apps, ML models, and data systems.
 
-**Live:** [portfolio-site on Vercel](https://portfolio-site.vercel.app)
+**Live:** [portfolio-site on Vercel](https://portfolio-site-nine-xi-86.vercel.app)
 
 ## Tech Stack
 
