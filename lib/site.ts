@@ -4,6 +4,8 @@ export interface Project {
   highlights: string[];
   tech: string[];
   image?: string;
+  /** Where `object-cover` anchors the image in the card thumbnail (default: center). */
+  imageObjectPosition?: "top" | "center" | "bottom";
   githubUrl?: string;
   liveUrl?: string;
   secondaryLink?: { url: string; label: string };
@@ -35,6 +37,21 @@ export const socialLinks: SocialLink[] = [
 ];
 
 export const projects: Project[] = [
+  {
+    title: "DipSignal",
+    description:
+      "Production Next.js app aggregating CNN Fear & Greed, Yahoo Finance, and S5FI breadth to score four S&P 500 “buy the dip” rules, with bilingual EN/HE UI and a markdown blog.",
+    highlights: [
+      "Four-rule dip signal (Fear & Greed, VIX, S5FI breadth, three red days) with historical charts",
+      "Vercel Blob storage for ~2 years of history + twice-daily cron refreshes",
+      "Bilingual (EN/HE) App Router routes, markdown blog, CRON_SECRET-protected jobs",
+    ],
+    tech: ["Next.js", "TypeScript", "Vercel", "Vercel Blob", "Recharts"],
+    image: "/dipSignal.jpg",
+    imageObjectPosition: "top",
+    githubUrl: "https://github.com/michaelkupfer97/dipSignal",
+    liveUrl: "https://dip-signal.vercel.app/",
+  },
   {
     title: "Weather Analytics",
     description:

@@ -4,6 +4,14 @@ import ContactForm from "@/components/ContactForm";
 import GradientBackground from "@/components/GradientBackground";
 import CursorAura from "@/components/CursorAura";
 
+function thumbnailObjectPositionClass(
+  position: (typeof projects)[number]["imageObjectPosition"],
+) {
+  if (position === "top") return "object-top";
+  if (position === "bottom") return "object-bottom";
+  return "object-center";
+}
+
 function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   return (
     <div className="group flex flex-col overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-500/20 hover:shadow-[0_8px_40px_-12px_rgba(99,102,241,0.15)]">
@@ -13,7 +21,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
             src={project.image}
             alt={project.title}
             fill
-            className="object-cover transition duration-500 group-hover:scale-105"
+            className={`object-cover transition duration-500 group-hover:scale-105 ${thumbnailObjectPositionClass(project.imageObjectPosition)}`}
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         ) : (
