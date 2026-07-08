@@ -3,7 +3,7 @@ export interface Project {
   description: string;
   highlights: string[];
   tech: string[];
-  image?: string;
+  images: string[];
   /** Where `object-cover` anchors the image in the card thumbnail (default: center). */
   imageObjectPosition?: "top" | "center" | "bottom";
   githubUrl?: string;
@@ -38,6 +38,56 @@ export const socialLinks: SocialLink[] = [
 
 export const projects: Project[] = [
   {
+    title: "Voxly",
+    description:
+      "Voice AI agent platform that turns natural-language requirements into schema-validated, provider-independent voice-agent configs. Private repository — contact me for access.",
+    highlights: [
+      "End-to-end platform: natural-language requirements → schema-validated, provider-independent voice-agent configs (OpenAI Structured Outputs + Zod)",
+      "Next.js/TypeScript + Supabase (immutable config versions), deterministic compiler deploying Vapi assistants; Twilio outbound + Cal.com booking",
+      "Lead/call management, authenticated webhooks, idempotent events, transcripts/recordings; 621 Vitest tests, deployed on Vercel",
+    ],
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Supabase",
+      "Vapi",
+      "Twilio",
+      "Cal.com",
+      "OpenAI",
+      "Zod",
+      "Vitest",
+      "Vercel",
+    ],
+    images: [
+      "/images/voxly/01-builder.png",
+      "/images/voxly/02-natural-language-builder.png",
+      "/images/voxly/03-leads-and-outbound-call.png",
+      "/images/voxly/04-call-result-and-booking-1.png",
+      "/images/voxly/04-call-result-and-booking-2.png",
+      "/images/voxly/05-agent-archive-restore.png",
+    ],
+    secondaryLink: {
+      url: "https://www.loom.com/share/e6e4e803793547ea9b322cb444a51408",
+      label: "Watch Demo",
+    },
+  },
+  {
+    title: "GTM Intelligence Agent",
+    description:
+      "Multi-agent pipeline that takes a company name and produces intelligence briefs, lead scores, outreach strategy, and a personalized three-email sequence.",
+    highlights: [
+      "Four-stage pipeline (researcher → scorer → strategist → copywriter) with Python, Claude, LangGraph, Tavily, and Streamlit",
+      "Structured context passing and tier-based gating to skip low-priority leads early, reducing unnecessary model calls and token usage",
+    ],
+    tech: ["Python", "LangGraph", "Claude", "Tavily", "Streamlit", "LangChain"],
+    images: [
+      "/images/gtm-intelligence-agent/01-overview.png",
+      "/images/gtm-intelligence-agent/02-scoring.png",
+      "/images/gtm-intelligence-agent/03-emails.png",
+    ],
+    githubUrl: "https://github.com/michaelkupfer97/gtm-intelligence-agent",
+  },
+  {
     title: "DipSignal",
     description:
       "Production Next.js app aggregating CNN Fear & Greed, Yahoo Finance, and S5FI breadth to score four S&P 500 “buy the dip” rules, with bilingual EN/HE UI and a markdown blog.",
@@ -47,7 +97,7 @@ export const projects: Project[] = [
       "Bilingual (EN/HE) App Router routes, markdown blog, CRON_SECRET-protected jobs",
     ],
     tech: ["Next.js", "TypeScript", "Vercel", "Vercel Blob", "Recharts"],
-    image: "/dipSignal.jpg",
+    images: ["/images/dipsignal/thumbnail.jpg"],
     imageObjectPosition: "top",
     githubUrl: "https://github.com/michaelkupfer97/dipSignal",
     liveUrl: "https://dip-signal.vercel.app/",
@@ -62,7 +112,7 @@ export const projects: Project[] = [
       "User preference storage (favorite cities) and Weather Score",
     ],
     tech: ["Node.js", "Express", "REST API", "JavaScript"],
-    image: "/weather-analytics.jpg",
+    images: ["/images/weather-analytics/thumbnail.jpg"],
     githubUrl: "https://github.com/michaelkupfer97/weather-website-node3",
     liveUrl: "https://weather-website-node3.onrender.com/",
   },
@@ -76,7 +126,7 @@ export const projects: Project[] = [
       "Full demo app with backend integration",
     ],
     tech: ["Python", "PyTorch", "GNN", "Optuna"],
-    image: "/trussify.png",
+    images: ["/images/trussify/thumbnail.png"],
     githubUrl: "https://github.com/michaelkupfer97/FinalProjectTrussify",
   },
   {
@@ -89,7 +139,7 @@ export const projects: Project[] = [
       "Interactive analysis dashboard in Jupyter",
     ],
     tech: ["Python", "TensorFlow", "LSTM", "Jupyter"],
-    image: "/stock1.jpg",
+    images: ["/images/stockpulse/thumbnail.jpg"],
     githubUrl: "https://github.com/michaelkupfer97/StockPulseAI",
     secondaryLink: {
       url: "https://github.com/michaelkupfer97/StockPulseAI/blob/main/DLFinalProject_stockPluseAI.ipynb",
@@ -116,7 +166,7 @@ export const projects: Project[] = [
       "Zod",
       "JWT",
     ],
-    image: "/work-scheduler.png",
+    images: ["/images/work-scheduler/thumbnail.png"],
     githubUrl: "https://github.com/michaelkupfer97/WorkScheduler",
     liveUrl: "https://work-scheduler-nine.vercel.app/",
     secondaryLink: {
@@ -134,7 +184,7 @@ export const projects: Project[] = [
       "Full-stack app with Express REST API and Vite vanilla JS frontend",
     ],
     tech: ["Node.js", "Express", "MongoDB", "JWT", "Vite"],
-    image: "/Stutio-time.jpg",
+    images: ["/images/studio-time/thumbnail.jpg"],
     githubUrl: "https://github.com/TheZohar11/miriyam-studio",
     liveUrl: "https://miriyam-studio-front.onrender.com/",
   },
@@ -148,7 +198,7 @@ export const projects: Project[] = [
       "Bootstrap layout and Font Awesome icons, deployed on Render",
     ],
     tech: ["Node.js", "Express", "EJS", "Bootstrap"],
-    image: "/BLOG-SITE.jpg",
+    images: ["/images/my-blog/thumbnail.jpg"],
     githubUrl: "https://github.com/michaelkupfer97/my-blog-express",
     liveUrl: "https://my-blog-express.onrender.com/",
   },
