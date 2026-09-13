@@ -26,8 +26,8 @@ export default function ProjectCard({ project }: { project: Project }) {
   }
 
   return (
-    <div className="group flex flex-col overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-500/20 hover:shadow-[0_8px_40px_-12px_rgba(99,102,241,0.15)]">
-      <div className="relative h-48 overflow-hidden">
+    <div className="group glass glow-border flex h-full flex-col overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_50px_-12px_rgba(99,102,241,0.25)]">
+      <div className="relative h-52 overflow-hidden">
         {activeImage ? (
           <Image
             key={activeImage}
@@ -44,7 +44,10 @@ export default function ProjectCard({ project }: { project: Project }) {
             </span>
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#111a2e] via-[#111a2e]/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1f] via-[#0a0f1f]/30 to-transparent" />
+        <span className="absolute left-3 top-3 z-10 rounded-full border border-white/10 bg-black/50 px-2.5 py-0.5 text-[11px] font-medium tracking-wide text-slate-200 backdrop-blur-sm">
+          {project.category}
+        </span>
 
         {hasCarousel && (
           <>

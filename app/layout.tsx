@@ -12,15 +12,35 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const title = "Michael Kupfer — Forward Deployed Engineer";
+const description =
+  "AI engineer shipping production agents into enterprise workflows. Voice agents, multi-agent LLM pipelines, RAG, and full-stack products — end to end.";
+
 export const metadata: Metadata = {
-  title: "Michael Kupfer — Portfolio",
-  description:
-    "End-to-end software projects spanning full-stack web apps, ML models, and data systems.",
+  metadataBase: new URL("https://portfolio-site-nine-xi-86.vercel.app"),
+  title,
+  description,
+  keywords: [
+    "Michael Kupfer",
+    "Forward Deployed Engineer",
+    "AI Engineer",
+    "AI Agents",
+    "Voice AI",
+    "LLM",
+    "Next.js",
+    "Python",
+    "Tel Aviv",
+  ],
   openGraph: {
-    title: "Michael Kupfer — Portfolio",
-    description:
-      "End-to-end software projects spanning full-stack web apps, ML models, and data systems.",
+    title,
+    description,
     type: "website",
+    siteName: "Michael Kupfer",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
   },
 };
 

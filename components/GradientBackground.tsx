@@ -7,7 +7,7 @@ export default function GradientBackground() {
       className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
     >
       {/* base */}
-      <div className="absolute inset-0 bg-[#111a2e]" />
+      <div className="absolute inset-0 bg-[#0a0f1f]" />
 
       {/* subtle grid */}
       <div
@@ -26,7 +26,7 @@ export default function GradientBackground() {
       <div className="orb orb-4" />
 
       {/* soft edge fade */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#111a2e]/50 via-transparent to-[#111a2e]/60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f1f]/50 via-transparent to-[#0a0f1f]/60" />
     </div>
   );
 }
