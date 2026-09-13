@@ -140,7 +140,7 @@ export const education: Education[] = [
   {
     degree: "B.Sc. Computer Science",
     school: "SCE — Sami Shamoon College of Engineering",
-    period: "2022 — 2026",
+    period: "2022 — 2025",
     note: "GPA 90 · Final project: Trussify (ML for structural design)",
   },
 ];
