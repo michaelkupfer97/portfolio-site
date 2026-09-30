@@ -56,7 +56,7 @@ export default function Home() {
           <div className="rise-in" style={rise(0)}>
             <span className="inline-flex items-center gap-2.5 rounded-full border border-emerald-400/25 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-medium text-emerald-200">
               <span className="status-dot relative h-2 w-2 rounded-full bg-emerald-400" />
-              {profile.role} @ {profile.company}
+              {profile.role} @ {profile.company} · via {profile.via}
             </span>
           </div>
 
@@ -170,7 +170,7 @@ export default function Home() {
                 {profile.role}
               </p>
               <p className="text-sm text-slate-400">
-                {profile.company} <span className="text-slate-600">· via HMS</span>
+                {profile.company} <span className="text-slate-600">· via {profile.via}</span>
               </p>
               <p className="mt-4 text-sm leading-relaxed text-slate-400">
                 Deploying production AI agents into enterprise workflows — discovery,

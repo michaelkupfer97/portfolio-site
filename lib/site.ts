@@ -49,6 +49,8 @@ export const profile = {
   email: "michaelkulhs@gmail.com",
   role: "Forward Deployed Engineer",
   company: "Wonderful",
+  /** Employer of record — always shown alongside the client company. */
+  via: "HMS",
   /** Phrases cycled by the hero typewriter after "I build". */
   heroRoles: [
     "production AI agents",
@@ -58,7 +60,7 @@ export const profile = {
     "full-stack products, end to end",
   ],
   tagline:
-    "Forward Deployed Engineer at Wonderful, shipping AI agents into real enterprise workflows. I own the whole stack — from LLM orchestration and integrations to the data layer and the UI on top.",
+    "Forward Deployed Engineer at Wonderful (via HMS), shipping AI agents into real enterprise workflows. I own the whole stack — from LLM orchestration and integrations to the data layer and the UI on top.",
   about: [
     "I’m an AI engineer with full-stack roots. Today I work as a Forward Deployed Engineer at Wonderful (via HMS), where I design, deploy, and iterate on production AI agents inside enterprise environments — wiring agent logic to real tools, data sources, and APIs.",
     "Before that I built Voxly, a voice-AI agent platform that turns plain-language requirements into deployable calling agents, and a series of LLM systems: a multi-agent GTM pipeline, a tool-calling analytics agent over federal aviation data, and a bilingual RAG app.",
